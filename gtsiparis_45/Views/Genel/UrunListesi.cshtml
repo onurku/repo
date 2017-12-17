@@ -1,0 +1,11 @@
+﻿@model  gtsiparis_45.Models.SiparisMenuView
+@{
+    ViewBag.Title = "SagMenu";
+    Layout = "~/Views/Shared/_SiparisKategorileri.cshtml";
+}
+@foreach (var item in Model.UrunItems)
+{
+        <hr class="divider">
+        @Html.Partial("_UrunGoster", item)    
+}
+

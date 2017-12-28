@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=17.1.1.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.17.1.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -150,30 +153,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BirimController.cs" />
     <Compile Include="Controllers\GenelController.cs" />
+    <Compile Include="Controllers\GrupController.cs" />
+    <Compile Include="Controllers\IlceController.cs" />
+    <Compile Include="Controllers\ILController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\KullaniciController.cs" />
+    <Compile Include="Controllers\LokasyonController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\SiparisController.cs" />
-    <Compile Include="Controllers\StoksController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
-    <Compile Include="Migrations\201712072205114_grd.cs" />
-    <Compile Include="Migrations\201712072205114_grd.Designer.cs">
-      <DependentUpon>201712072205114_grd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081153508_dddd.cs" />
-    <Compile Include="Migrations\201712081153508_dddd.Designer.cs">
-      <DependentUpon>201712081153508_dddd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712081230347_resim.cs" />
-    <Compile Include="Migrations\201712081230347_resim.Designer.cs">
-      <DependentUpon>201712081230347_resim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712142041514_d.cs" />
-    <Compile Include="Migrations\201712142041514_d.Designer.cs">
-      <DependentUpon>201712142041514_d.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712170926206_test.cs" />
-    <Compile Include="Migrations\201712170926206_test.Designer.cs">
-      <DependentUpon>201712170926206_test.cs</DependentUpon>
+    <Compile Include="Migrations\201712271817553_initialCreate.cs" />
+    <Compile Include="Migrations\201712271817553_initialCreate.Designer.cs">
+      <DependentUpon>201712271817553_initialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Birim.cs" />
@@ -193,6 +187,8 @@
     <Compile Include="Models\MenuViewModels.cs" />
     <Compile Include="Models\SiparisMenuView.cs" />
     <Compile Include="Models\Stok.cs" />
+    <Compile Include="Models\StokController.cs" />
+    <Compile Include="Models\UrunStok.cs" />
     <Compile Include="Veri\Model1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Rol.cs" />
@@ -216,6 +212,7 @@
     <Content Include="Content\images\ui-icons_777777_256x240.png" />
     <Content Include="Content\images\ui-icons_cc0000_256x240.png" />
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\magnific-popup.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -323,6 +320,8 @@
     <Content Include="Content\jquery-ui.structure.min.css" />
     <Content Include="Content\jquery-ui.theme.css" />
     <Content Include="Content\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\jquery.magnific-popup.js" />
+    <Content Include="Scripts\jquery.magnific-popup.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -396,7 +395,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -422,7 +423,6 @@
     <Content Include="Views\Kategori\Details.cshtml" />
     <Content Include="Views\Kategori\Edit.cshtml" />
     <Content Include="Views\Kategori\Index.cshtml" />
-    <Content Include="Views\Genel\SagMenu.cshtml" />
     <Content Include="Views\Siparis\Create.cshtml" />
     <Content Include="Views\Siparis\Delete.cshtml" />
     <Content Include="Views\Siparis\Details.cshtml" />
@@ -430,11 +430,53 @@
     <Content Include="Views\Siparis\Index.cshtml" />
     <Content Include="Views\Shared\_UrunGoster.cshtml" />
     <Content Include="Views\Genel\UrunListesi.cshtml" />
-    <Content Include="Views\Stoks\Create.cshtml" />
-    <Content Include="Views\Stoks\Delete.cshtml" />
-    <Content Include="Views\Stoks\Details.cshtml" />
-    <Content Include="Views\Stoks\Edit.cshtml" />
-    <Content Include="Views\Stoks\Index.cshtml" />
+    <Content Include="Views\Shared\_SiparisEkle.cshtml" />
+    <Content Include="Views\Birim\Create.cshtml" />
+    <Content Include="Views\Birim\Delete.cshtml" />
+    <Content Include="Views\Birim\Details.cshtml" />
+    <Content Include="Views\Birim\Edit.cshtml" />
+    <Content Include="Views\Birim\Index.cshtml" />
+    <Content Include="Views\Kullanici\Create.cshtml" />
+    <Content Include="Views\Kullanici\Delete.cshtml" />
+    <Content Include="Views\Kullanici\Details.cshtml" />
+    <Content Include="Views\Kullanici\Edit.cshtml" />
+    <Content Include="Views\Kullanici\Index.cshtml" />
+    <Content Include="Views\Genel\UrunGosterDetay.cshtml" />
+    <Content Include="Views\Ilce\Create.cshtml" />
+    <Content Include="Views\Ilce\Delete.cshtml" />
+    <Content Include="Views\Ilce\Details.cshtml" />
+    <Content Include="Views\Ilce\Edit.cshtml" />
+    <Content Include="Views\Ilce\Index.cshtml" />
+    <Content Include="Views\IL\Create.cshtml" />
+    <Content Include="Views\IL\Delete.cshtml" />
+    <Content Include="Views\IL\Details.cshtml" />
+    <Content Include="Views\IL\Edit.cshtml" />
+    <Content Include="Views\IL\Index.cshtml" />
+    <Content Include="Views\Lokasyon\Create.cshtml" />
+    <Content Include="Views\Lokasyon\Delete.cshtml" />
+    <Content Include="Views\Lokasyon\Details.cshtml" />
+    <Content Include="Views\Lokasyon\Edit.cshtml" />
+    <Content Include="Views\Lokasyon\Index.cshtml" />
+    <Content Include="Views\Menu\Create.cshtml" />
+    <Content Include="Views\Menu\Delete.cshtml" />
+    <Content Include="Views\Menu\Details.cshtml" />
+    <Content Include="Views\Menu\Edit.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Rol\Create.cshtml" />
+    <Content Include="Views\Rol\Delete.cshtml" />
+    <Content Include="Views\Rol\Details.cshtml" />
+    <Content Include="Views\Rol\Edit.cshtml" />
+    <Content Include="Views\Rol\Index.cshtml" />
+    <Content Include="Views\Grup\Create.cshtml" />
+    <Content Include="Views\Grup\Delete.cshtml" />
+    <Content Include="Views\Grup\Details.cshtml" />
+    <Content Include="Views\Grup\Edit.cshtml" />
+    <Content Include="Views\Grup\Index.cshtml" />
+    <Content Include="Views\Stok\Create.cshtml" />
+    <Content Include="Views\Stok\Delete.cshtml" />
+    <Content Include="Views\Stok\Details.cshtml" />
+    <Content Include="Views\Stok\Edit.cshtml" />
+    <Content Include="Views\Stok\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -453,20 +495,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712072205114_grd.resx">
-      <DependentUpon>201712072205114_grd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081153508_dddd.resx">
-      <DependentUpon>201712081153508_dddd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712081230347_resim.resx">
-      <DependentUpon>201712081230347_resim.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712142041514_d.resx">
-      <DependentUpon>201712142041514_d.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712170926206_test.resx">
-      <DependentUpon>201712170926206_test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712271817553_initialCreate.resx">
+      <DependentUpon>201712271817553_initialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,7 +13,7 @@ namespace gtsiparis_45.Controllers
     public class KategoriController : Controller
     {
         private Model1 db = new Model1();
-
+        
         // GET: Kategori
         public ActionResult Index()
         {

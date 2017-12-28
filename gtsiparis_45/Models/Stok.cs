@@ -15,7 +15,7 @@ namespace gtsiparis_45
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         [Key]
         public int Id { get; set; }
-
+         
         [DisplayName("Ürün")]
         public int? UrunId { get; set; }
         public virtual Urun Urun { get; set; }

@@ -2,5 +2,4 @@
     $('.datepicker').datepicker(
         { dateFormat: 'dd.mm.yyyy' }
     ); //Initialise any date pickers
-
 });

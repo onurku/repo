@@ -1,0 +1,47 @@
+﻿@model gtsiparis_45.Urun
+<div id="showErrorMessage"></div>
+<form id="Siparis-form">
+    <div class="container" id="SiparisEkleForm">
+        <h4>Urun</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Adi)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Adi)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Birim.BirimAdi)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Birim.BirimAdi)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Grup.GrupAdi)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Grup.GrupAdi)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+            </dd>
+            <dt>
+                Sipariş Miktarı
+            </dt>
+            <dd>
+                <div class="form-group">
+                    @Html.TextBox("SiparisMiktari", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.DisplayFor(model => model.Birim.BirimAdi)
+                </div>
+            </dd>
+        </dl>
+    </div>
+</form>
+@*<p>
+    @Html.ActionLink("Siparişi Sepete Ekle", "Edit","Genel", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

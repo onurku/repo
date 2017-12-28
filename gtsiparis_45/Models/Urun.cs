@@ -15,7 +15,7 @@
         {
             Siparisler = new HashSet<Siparis>();
             Stoklar = new HashSet<Stok>();
-        }
+        } 
 
         public int Id { get; set; }
 

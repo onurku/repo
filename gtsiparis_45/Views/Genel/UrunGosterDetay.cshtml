@@ -1,0 +1,90 @@
+﻿@model gtsiparis_45.Urun
+@{
+    ViewBag.Title = "UrunGosterDetay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UrunGosterDetay</h2>
+
+<div class="container">
+    <div class="col-md-4">
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Adi )
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Adi)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Grup.GrupAdi)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Grup.GrupAdi)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Kategori.KategoriAdi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kategori.KategoriAdi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fiyat)
+            </dd>
+            <dt>
+                Sipariş Miktarı
+            </dt>
+            <dd>
+                @Html.TextBox("SiparisMiktariT", null, new { @class = "form-control" })
+            </dd>
+        </dl>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-2">
+        <p> @Html.ActionLink("Siparişi Kutuna Ekle", "SiparisiSepeteEkle", new {  id = Model.Id }, new { @class = "btn btn-primary btn-large" , id = "alink" }) </p>    
+    </div>
+    
+</div>
+@section scripts {
+<script type="text/javascript">
+
+    $("#alink").click(function (evt) {
+
+        //TODO
+        var url = $(this).attr('href') + '/' + $("#SiparisMiktariT").val() +"/"; // build new url
+        alert(url);
+        location.href = url; // redirect
+        return false; // cancel default redirect
+
+        });
+
+</script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

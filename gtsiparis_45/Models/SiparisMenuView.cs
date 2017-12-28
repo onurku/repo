@@ -10,5 +10,12 @@ namespace gtsiparis_45.Models
     {
         public IEnumerable<Kategori> KategoriItems { get; set; }
         public IEnumerable<Urun> UrunItems { get; set; }
+
+    }
+
+    public class SiparisViewModelOne
+    {
+        public Siparis SiparisTemp { get; set; }
+        public Urun UrunTemp { get; set; }
     }
 }

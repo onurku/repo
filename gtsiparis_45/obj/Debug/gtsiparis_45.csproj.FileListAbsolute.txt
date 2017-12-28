@@ -68,10 +68,7 @@ C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_
 C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\bin\Microsoft.AI.Web.xml
 C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.dll
 C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.pdb
-C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.Migrations.grd.resources
-C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.csproj.GenerateResource.Cache
-C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.Migrations.dddd.resources
-C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.Migrations.resim.resources
-C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.Migrations.d.resources
+C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\bin\AjaxControlToolkit.dll
 C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.csprojResolveAssemblyReference.cache
-C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.Migrations.test.resources
+C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.Migrations.initialCreate.resources
+C:\Users\Onur\Documents\OKURT\YeryuzuDer\GidaTopluluguv8\gtsiparis_45\gtsiparis_45\obj\Debug\gtsiparis_45.csproj.GenerateResource.Cache

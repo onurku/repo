@@ -23,6 +23,17 @@ namespace gtsiparis_45
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Genel", action = "UrunListesi", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+                "SiparisiSepeteEkle",
+                "SepeteEkle/{id}/{SipMik:decimal}/",
+                new
+                {
+                    controller = "Genel",
+                    action = "SiparisiSepeteEkle",
+                    id = UrlParameter.Optional,
+                    SipMik = UrlParameter.Optional
+                });
         }
     }
 }

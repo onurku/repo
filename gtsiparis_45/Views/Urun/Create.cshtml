@@ -51,15 +51,15 @@
         <div class="form-group" id='datetimepicker1'>
             @Html.LabelFor(model => model.Baslangic, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Baslangic, new { htmlAttributes = new { @class = "datepicker form-control" } })
+                @Html.TextBoxFor(model => model.Baslangic, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "datepicker form-control" } })
                 @Html.ValidationMessageFor(model => model.Baslangic, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group"   id='datetimepicker1'>
             @Html.LabelFor(model => model.Bitis, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Bitis, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.Bitis, "{0:dd/MM/yyyy}", new { htmlAttributes = new { @class = "datepicker form-control" } })
                 @Html.ValidationMessageFor(model => model.Bitis, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -115,6 +115,13 @@
         </div>
 
         <div class="form-group">
+            SToktaki Ürün Miktarı
+            <div class="col-md-10">
+                @Html.TextBox("StokMiktari", null, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -129,7 +136,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

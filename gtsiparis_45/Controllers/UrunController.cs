@@ -14,7 +14,7 @@ namespace gtsiparis_45.Controllers
     {
         private Model1 db = new Model1();
 
-        // GET: Urun
+        // GET: Urun 
         public ActionResult Index()
         {
             var urun = db.Urun.Include(u => u.Birim).Include(u => u.Grup).Include(u => u.Kategori).Include(u => u.Sorumlu).Include(u => u.Uretici);
@@ -52,12 +52,31 @@ namespace gtsiparis_45.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Adi,Aciklama,Maliyet,Fiyat,Baslangic,Bitis,Aktif,Birim_Id,Grup_Id,Kategori_Id,Sorumlu_Id,Uretici_Id,RowVersion")] Urun urun)
+        public ActionResult Create([Bind(Include = "Id,Adi,Aciklama,Maliyet,Fiyat,Baslangic,Bitis,Aktif,Birim_Id,Grup_Id,Kategori_Id,Sorumlu_Id,Uretici_Id,RowVersion")] Urun urun , decimal StokMiktari)
         {
+            Stok stok = new Stok
+            {
+                GirdiCikti = true,
+                Miktar = StokMiktari,
+                SonStok = StokMiktari,
+                Tarih = DateTime.Now
+            };
+            
+
             if (ModelState.IsValid)
             {
+                
                 db.Urun.Add(urun);
                 db.SaveChanges();
+                stok.UrunId = urun.Id;
+                db.Stok.Add(stok);
+                db.SaveChanges();
+                urun.StokId = stok.Id;
+                urun.Stok = stok;
+                //
+                db.Entry(urun).State = EntityState.Modified;
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 

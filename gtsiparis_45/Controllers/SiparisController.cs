@@ -9,7 +9,7 @@ using System.Web.Mvc;
 using gtsiparis_45;
 
 namespace gtsiparis_45.Controllers
-{
+{ 
     public class SiparisController : Controller
     {
         private Model1 db = new Model1();

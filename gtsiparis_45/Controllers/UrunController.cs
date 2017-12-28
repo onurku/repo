@@ -76,7 +76,6 @@ namespace gtsiparis_45.Controllers
                 //
                 db.Entry(urun).State = EntityState.Modified;
                 db.SaveChanges();
-
                 return RedirectToAction("Index");
             }
 
